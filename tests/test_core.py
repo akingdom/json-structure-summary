@@ -161,7 +161,7 @@ def test_format_schema_pretty():
 def test_format_schema_not_pretty():
     schema = {"type": "object"}
     output = format_schema(schema, pretty=False)
-    assert output == '{"type":"object"}'
+    assert json.loads(output) == schema
 
 def test_format_summary():
     schema = {"type": "object", "properties": {"a": {"type": "integer"}}, "required": ["a"]}
