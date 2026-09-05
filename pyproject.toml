@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "json-structure-summary"
+dynamic = ["version"]  # defined in __init__.py
+description = "Infer and summarize the structure of any JSON file – even malformed ones – as a schema or human-readable tree."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+authors = [
+    { name = "Andrew Kingdom" }
+]
+keywords = [
+    "json",
+    "schema",
+    "inference",
+    "validation",
+    "structural-analysis",
+    "cli",
+    "data-exploration"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup :: JSON",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []  # only uses the standard library
+
+[project.urls]
+Homepage = "https://github.com/akingdom/json-structure-summary"
+Repository = "https://github.com/akingdom/json-structure-summary"
+Issues = "https://github.com/akingdom/json-structure-summary/issues"
+
+[project.scripts]
+json-structure-summary = "json_structure_summary:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "json_structure_summary.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
