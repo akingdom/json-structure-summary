@@ -45,6 +45,9 @@ Issues = "https://github.com/akingdom/json-structure-summary/issues"
 [project.scripts]
 json-structure-summary = "json_structure_summary:main"
 
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov>=4.0"]
+
 [tool.setuptools.dynamic]
 version = { attr = "json_structure_summary.__version__" }
 
