@@ -1,5 +1,10 @@
-"""image_bridge_toolkit: perceptual image fingerprint cache + cross-dataset bridge matcher."""
-from ._imaging_backend import HAS_OPENCV
+"""json_structure_summary: Infer and summarize the structure of any JSON file, even malformed ones."""
 
-__version__ = "0.2.6"
-__all__ = ["HAS_OPENCV", "__version__"]
+from .core import summarize_json_structure, main
+
+__version__ = "0.1.0"
+__all__ = [
+    "__version__",
+    "summarize_json_structure",
+    "main",
+]
