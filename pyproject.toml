@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "json-structure-summary"
-dynamic = ["version"]  # defined in __init__.py
+dynamic = ["version"]
 description = "Infer and summarize the structure of any JSON file – even malformed ones – as a schema or human-readable tree."
 readme = "README.md"
 requires-python = ">=3.7"
@@ -37,6 +37,9 @@ classifiers = [
 ]
 dependencies = []  # only uses the standard library
 
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov>=4.0"]
+
 [project.urls]
 Homepage = "https://github.com/akingdom/json-structure-summary"
 Repository = "https://github.com/akingdom/json-structure-summary"
@@ -45,11 +48,14 @@ Issues = "https://github.com/akingdom/json-structure-summary/issues"
 [project.scripts]
 json-structure-summary = "json_structure_summary:main"
 
-[project.optional-dependencies]
-test = ["pytest>=7.0", "pytest-cov>=4.0"]
-
 [tool.setuptools.dynamic]
 version = { attr = "json_structure_summary.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --cov=json_structure_summary --cov-report=term-missing"
+testpaths = ["tests"]
+python_files = "test_*.py"
